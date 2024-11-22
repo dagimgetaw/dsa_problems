@@ -1,15 +1,16 @@
 from collections import defaultdict
 
-strs = ["eat","tea","tan","ate","nat","bat"]
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 
-hashmap = defaultdict(list)
-arr = []
+        hashmap = defaultdict(list)
+        arr = []
 
-for i in strs:
-    n = tuple(sorted(i))
-    hashmap[n].append(i)
-    
-for i in hashmap.values():
-    arr.append(i)
-    
-print(arr)
+        for i in strs:
+            n = tuple(sorted(i))
+            hashmap[n].append(i)
+
+        for i in hashmap.values():
+            arr.append(i)
+
+        return arr
